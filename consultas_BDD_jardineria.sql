@@ -279,7 +279,7 @@ FROM cliente
 RIGHT JOIN empleado 
     ON cliente.codigo_empleado_rep_ventas = empleado.codigo_empleado
 LEFT JOIN oficina 
-ON empleado.codigo_oficina = oficina.codigo_oficina
+    ON empleado.codigo_oficina = oficina.codigo_oficina
 WHERE cliente.codigo_empleado_rep_ventas IS NULL;
 /*7.-Devuelve un listado que muestre los empleados que no tienen una oficina asociada y los que no tienen un cliente asociado.*/
 SELECT
@@ -288,9 +288,9 @@ SELECT
     oficina.*
 FROM cliente 
 RIGHT JOIN empleado 
-ON cliente.codigo_empleado_rep_ventas = empleado.codigo_empleado
+    ON cliente.codigo_empleado_rep_ventas = empleado.codigo_empleado
 LEFT JOIN oficina 
-ON empleado.codigo_oficina = oficina.codigo_oficina
+    ON empleado.codigo_oficina = oficina.codigo_oficina
 WHERE cliente.codigo_empleado_rep_ventas IS NULL 
    OR empleado.codigo_oficina IS NULL;
 /*8.-Devuelve un listado de los productos que nunca han aparecido en un pedido.*/
@@ -393,7 +393,7 @@ SELECT
     COUNT(*) AS clientes
 FROM empleado 
 INNER JOIN cliente  
-ON empleado.codigo_empleado = cliente.codigo_empleado_rep_ventas
+    ON empleado.codigo_empleado = cliente.codigo_empleado_rep_ventas
 GROUP BY empleado.codigo_empleado;
 /*10.-Calcula el número de clientes que no tiene asignado representante de ventas.*/
 SELECT
